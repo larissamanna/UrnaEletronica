@@ -305,9 +305,9 @@ public static class Servidor
         lock (travaConsole)
         {
             Console.WriteLine($"[{DateTime.Now:HH:mm:ss}] [SERVIDOR] {titulo}");
-            Console.WriteLine($"  {"NÚMERO",-8}{"CANDIDATO",-16}{"PARTIDO",-20}{"VOTOS"}");
+            Console.WriteLine($"  {"NÚMERO",-8}{"CANDIDATO",-24}{"PARTIDO",-20}{"VOTOS"}");
             foreach (var a in apuracao)
-                Console.WriteLine($"  {a.Numero,-8}{a.Nome,-16}{a.Partido,-20}{a.Votos}");
+                Console.WriteLine($"  {a.Numero,-8}{a.Nome,-24}{a.Partido,-20}{a.Votos}");
         }
     }
 }

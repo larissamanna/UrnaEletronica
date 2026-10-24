@@ -51,8 +51,6 @@ public static class Cliente
         leitor = new StreamReader(fluxo, utf8);
         escritor = new StreamWriter(fluxo, utf8) { AutoFlush = true, NewLine = "\n" };
 
-        // A primeira mensagem do servidor é o BEMVINDO, com os candidatos
-        // Formato: BEMVINDO|mensagem|10:Ana Souza:Partido Azul;20:Bruno Lima:Partido Verde;...
         string[] boasVindas = Receber().Split('|');
         foreach (string item in boasVindas[2].Split(';'))
         {
@@ -138,7 +136,7 @@ public static class Cliente
     {
         Console.WriteLine("\n----------- CANDIDATOS -----------");
         foreach (var c in candidatos)
-            Console.WriteLine($"  {c.Numero}  {c.Nome,-15} {c.Partido}");
+            Console.WriteLine($"  {c.Numero}  {c.Nome,-24} {c.Partido}");
         Console.WriteLine("  (vazio) VOTO EM BRANCO");
         Console.WriteLine("  qualquer outro número = VOTO NULO");
         Console.WriteLine("------------------------------------");
@@ -179,14 +177,14 @@ public static class Cliente
     // Pede o resultado ao servidor e mostra a tabela
     private static void VerApuracao()
     {
-        // Resposta: RESULTADO|10:Ana Souza:Partido Azul:3;...;-:NULO:-:0
+        // Resposta: RESULTADO|10:Larissa Manna:Partido Galo:3;...;-:NULO:-:0
         string[] resposta = Pedir("RESULTADO");
         Console.WriteLine("\n----------- APURAÇÃO PARCIAL -----------");
-        Console.WriteLine($"  {"NÚMERO",-8}{"CANDIDATO",-16}{"PARTIDO",-20}{"VOTOS"}");
+        Console.WriteLine($"  {"NÚMERO",-8}{"CANDIDATO",-24}{"PARTIDO",-20}{"VOTOS"}");
         foreach (string item in resposta[1].Split(';'))
         {
             string[] a = item.Split(':');
-            Console.WriteLine($"  {a[0],-8}{a[1],-16}{a[2],-20}{a[3]}");
+            Console.WriteLine($"  {a[0],-8}{a[1],-24}{a[2],-20}{a[3]}");
         }
     }
 }

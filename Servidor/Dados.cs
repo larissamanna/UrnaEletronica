@@ -18,9 +18,9 @@ public static class Dados
     // O número é o que o eleitor digita na urna
     public static readonly Candidato[] Candidatos =
     {
-        new(10, "Ana Souza",    "Partido Azul"),
-        new(20, "Bruno Lima",   "Partido Verde"),
-        new(30, "Carla Mendes", "Partido Amarelo"),
-        new(40, "Daniel Rocha", "Partido Vermelho"),
+        new(10, "Larissa Manna",     "Partido Galo"),
+        new(20, "Gabriella Paz",     "Partido Palmeiras"),
+        new(30, "Cristiane Santos",  "Partido Maria"),
+        new(40, "Lucas Lima",        "Partido America"),
     };
 }
